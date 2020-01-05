@@ -88,7 +88,7 @@ Header
   height: 45px;
   width: 100%;
   /*background: #3e454c;*/
-  background-color: rgb(189, 156, 99);
+  background-color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
