@@ -633,7 +633,7 @@ a.uk-link-reset:focus,
 .uk-divider-icon {
   position: relative;
   height: 20px;
-  background-image: url("../../images/backgrounds/divider-icon.svg");
+  background-image: url("../../img/backgrounds/divider-icon.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -745,7 +745,7 @@ a.uk-link-reset:focus,
   left: 0;
   width: 1.5em;
   height: 1.5em;
-  background-image: url("../../images/backgrounds/list-bullet.svg");
+  background-image: url("../../img/backgrounds/list-bullet.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   float: left;
@@ -1305,7 +1305,7 @@ select.uk-form-width-xsmall {
   -moz-appearance: none;
   /* 2 */
   padding-right: 20px;
-  background-image: url("../../images/backgrounds/form-select.svg");
+  background-image: url("../../img/backgrounds/form-select.svg");
   background-repeat: no-repeat;
   background-position: 100% 50%;
 }
@@ -1317,7 +1317,7 @@ select.uk-form-width-xsmall {
  * Disabled
  */
 .uk-select:not([multiple]):not([size]):disabled {
-  background-image: url("../../images/backgrounds/form-select.svg");
+  background-image: url("../../img/backgrounds/form-select.svg");
 }
 /* Radio and checkbox
  * Note: Only works in Chrome, Safari, Opera and Edge
@@ -1382,13 +1382,13 @@ select.uk-form-width-xsmall {
  * Icons
  */
 .uk-radio:checked {
-  background-image: url("../../images/backgrounds/form-radio.svg");
+  background-image: url("../../img/backgrounds/form-radio.svg");
 }
 .uk-checkbox:checked {
-  background-image: url("../../images/backgrounds/form-checkbox.svg");
+  background-image: url("../../img/backgrounds/form-checkbox.svg");
 }
 .uk-checkbox:indeterminate {
-  background-image: url("../../images/backgrounds/form-checkbox-indeterminate.svg");
+  background-image: url("../../img/backgrounds/form-checkbox-indeterminate.svg");
 }
 /*
  * Disabled
@@ -1399,13 +1399,13 @@ select.uk-form-width-xsmall {
   border-color: #e5e5e5;
 }
 .uk-radio:disabled:checked {
-  background-image: url("../../images/backgrounds/form-radio.svg");
+  background-image: url("../../img/backgrounds/form-radio.svg");
 }
 .uk-checkbox:disabled:checked {
-  background-image: url("../../images/backgrounds/form-checkbox.svg");
+  background-image: url("../../img/backgrounds/form-checkbox.svg");
 }
 .uk-checkbox:disabled:indeterminate {
-  background-image: url("../../images/backgrounds/form-checkbox-indeterminate.svg");
+  background-image: url("../../img/backgrounds/form-checkbox-indeterminate.svg");
 }
 /* Legend
  ========================================================================== */
@@ -3428,12 +3428,12 @@ ul.uk-nav-sub {
   width: 1.5em;
   height: 1.5em;
   float: right;
-  background-image: url("../../images/backgrounds/nav-parent-close.svg");
+  background-image: url("../../img/backgrounds/nav-parent-close.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 .uk-nav-parent-icon > .uk-parent.uk-open > a::after {
-  background-image: url("../../images/backgrounds/nav-parent-open.svg");
+  background-image: url("../../img/backgrounds/nav-parent-open.svg");
 }
 /* Header
  ========================================================================== */
@@ -4464,12 +4464,12 @@ ul.uk-nav-sub {
   width: 1.4em;
   height: 1.4em;
   float: right;
-  background-image: url("../../images/backgrounds/accordion-close.svg");
+  background-image: url("../../img/backgrounds/accordion-close.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 .uk-open > .uk-accordion-title::after {
-  background-image: url("../../images/backgrounds/accordion-open.svg");
+  background-image: url("../../img/backgrounds/accordion-open.svg");
 }
 /* Content
  ========================================================================== */
@@ -9110,7 +9110,7 @@ td.uk-text-break {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-divider-icon,
 .uk-overlay-primary .uk-divider-icon,
 .tm-navbar-container:not(.uk-navbar-transparent) .uk-divider-icon {
-  background-image: url("../../images/backgrounds/divider-icon.svg");
+  background-image: url("../../img/backgrounds/divider-icon.svg");
 }
 .uk-light .uk-divider-icon::before,
 .uk-light .uk-divider-icon::after,
@@ -9212,7 +9212,7 @@ td.uk-text-break {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-list-bullet > li::before,
 .uk-overlay-primary .uk-list-bullet > li::before,
 .tm-navbar-container:not(.uk-navbar-transparent) .uk-list-bullet > li::before {
-  background-image: url("../../images/backgrounds/list-bullet.svg");
+  background-image: url("../../img/backgrounds/list-bullet.svg");
 }
 .uk-light .uk-icon-link,
 .uk-section-primary:not(.uk-preserve-color) .uk-icon-link,
@@ -9492,7 +9492,7 @@ td.uk-text-break {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-select:not([multiple]):not([size]),
 .uk-overlay-primary .uk-select:not([multiple]):not([size]),
 .tm-navbar-container:not(.uk-navbar-transparent) .uk-select:not([multiple]):not([size]) {
-  background-image: url("../../images/backgrounds/form-select.svg");
+  background-image: url("../../img/backgrounds/form-select.svg");
 }
 .uk-light .uk-radio,
 .uk-light .uk-checkbox,
@@ -9625,7 +9625,7 @@ td.uk-text-break {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-radio:checked,
 .uk-overlay-primary .uk-radio:checked,
 .tm-navbar-container:not(.uk-navbar-transparent) .uk-radio:checked {
-  background-image: url("../../images/backgrounds/form-radio.svg");
+  background-image: url("../../img/backgrounds/form-radio.svg");
 }
 .uk-light .uk-checkbox:checked,
 .uk-section-primary:not(.uk-preserve-color) .uk-checkbox:checked,
@@ -9638,7 +9638,7 @@ td.uk-text-break {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:checked,
 .uk-overlay-primary .uk-checkbox:checked,
 .tm-navbar-container:not(.uk-navbar-transparent) .uk-checkbox:checked {
-  background-image: url("../../images/backgrounds/form-checkbox.svg");
+  background-image: url("../../img/backgrounds/form-checkbox.svg");
 }
 .uk-light .uk-checkbox:indeterminate,
 .uk-section-primary:not(.uk-preserve-color) .uk-checkbox:indeterminate,
@@ -9651,7 +9651,7 @@ td.uk-text-break {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:indeterminate,
 .uk-overlay-primary .uk-checkbox:indeterminate,
 .tm-navbar-container:not(.uk-navbar-transparent) .uk-checkbox:indeterminate {
-  background-image: url("../../images/backgrounds/form-checkbox-indeterminate.svg");
+  background-image: url("../../img/backgrounds/form-checkbox-indeterminate.svg");
 }
 .uk-light .uk-form-label,
 .uk-section-primary:not(.uk-preserve-color) .uk-form-label,
@@ -10281,7 +10281,7 @@ td.uk-text-break {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-nav-parent-icon > .uk-parent > a::after,
 .uk-overlay-primary .uk-nav-parent-icon > .uk-parent > a::after,
 .tm-navbar-container:not(.uk-navbar-transparent) .uk-nav-parent-icon > .uk-parent > a::after {
-  background-image: url("../../images/backgrounds/nav-parent-close.svg");
+  background-image: url("../../img/backgrounds/nav-parent-close.svg");
 }
 .uk-light .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
 .uk-section-primary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
@@ -10294,7 +10294,7 @@ td.uk-text-break {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
 .uk-overlay-primary .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
 .tm-navbar-container:not(.uk-navbar-transparent) .uk-nav-parent-icon > .uk-parent.uk-open > a::after {
-  background-image: url("../../images/backgrounds/nav-parent-open.svg");
+  background-image: url("../../img/backgrounds/nav-parent-open.svg");
 }
 .uk-light .uk-nav-default > li > a,
 .uk-section-primary:not(.uk-preserve-color) .uk-nav-default > li > a,
@@ -11307,7 +11307,7 @@ td.uk-text-break {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-accordion-title::after,
 .uk-overlay-primary .uk-accordion-title::after,
 .tm-navbar-container:not(.uk-navbar-transparent) .uk-accordion-title::after {
-  background-image: url("../../images/backgrounds/accordion-close.svg");
+  background-image: url("../../img/backgrounds/accordion-close.svg");
 }
 .uk-light .uk-open > .uk-accordion-title::after,
 .uk-section-primary:not(.uk-preserve-color) .uk-open > .uk-accordion-title::after,
@@ -11320,7 +11320,7 @@ td.uk-text-break {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-open > .uk-accordion-title::after,
 .uk-overlay-primary .uk-open > .uk-accordion-title::after,
 .tm-navbar-container:not(.uk-navbar-transparent) .uk-open > .uk-accordion-title::after {
-  background-image: url("../../images/backgrounds/accordion-open.svg");
+  background-image: url("../../img/backgrounds/accordion-open.svg");
 }
 .uk-light .tm-button-default,
 .uk-section-primary:not(.uk-preserve-color) .tm-button-default,
@@ -11607,10 +11607,10 @@ html {
   background: linear-gradient(to left top, #28a5f5, #1e87f0) 0 0 no-repeat;
 }
 .tm-section-texture {
-  background: url("../images/section-background.svg") 50% 50% no-repeat, linear-gradient(to left top, #28a5f5, #1e87f0) 0 0 no-repeat;
+  background: url("../img/section-background.svg") 50% 50% no-repeat, linear-gradient(to left top, #28a5f5, #1e87f0) 0 0 no-repeat;
 }
 .tm-section-intro {
-  background: url("../images/section-background.svg") 50% 50% no-repeat, linear-gradient(to left top, #28a5f5, #1e87f0) 0 0 no-repeat, #fff;
+  background: url("../img/section-background.svg") 50% 50% no-repeat, linear-gradient(to left top, #28a5f5, #1e87f0) 0 0 no-repeat, #fff;
   background-size: auto, 100% 70%;
 }
 /*
