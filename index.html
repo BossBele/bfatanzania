@@ -42,26 +42,26 @@
 		            </ul>
 		        	<ul class="uk-navbar-nav uk-navbar-right uk-flex-right" style="width:100%;">
 		        		<li class="uk-active">
-		        			<a href="#">About Us</a>
+		        			<a href="#about">About Us</a>
 		        			<div class="uk-navbar-dropdown">
 			                    <ul class="uk-nav uk-navbar-dropdown-nav">
-			                        <li class="uk-active"><a href="#">Who We Are</a></li>
-			                        <li><a href="#">Impacts</a></li>
-			                        <li><a href="#">Item</a></li>
+			                        <li class="uk-active"><a href="#about">Who We Are</a></li>
+			                        <li><a href="#impacts">Impacts</a></li>
+			                        <!-- <li><a href="#">Item</a></li> -->
 			                        <li><a href="#executives-team">Executives Team</a></li>
 			                    </ul>
 			                </div>
 		        		</li>
 		        		<li class="uk-active">
-		        			<a href="#consultancy">Programs</a>
+		        			<a href="#programmes">Programs</a>
 		        			<div class="uk-navbar-dropdown">
 			                    <ul class="uk-nav uk-navbar-dropdown-nav">
-			                        <li class="uk-active"><a href="#">Outreach</a></li>
-			                        <li><a href="#">Saturday</a></li>
-			                        <li><a href="#">X-mas Gifts</a></li>
-			                        <li><a href="#">Girl Chapter</a></li>
-			                        <li><a href="#">General Gathering</a></li>
-			                        <li><a href="#">Fellowship</a></li>
+			                        <li class="uk-active"><a href="#programmes/outreach">Outreach</a></li>
+			                        <li><a class="data-link" href="#programmes/saturday">Saturday</a></li>
+			                        <li><a href="#programmes/xmas">X-mas Gifts</a></li>
+			                        <li><a href="#programmes/girlchapter">Girl Chapter</a></li>
+			                        <li><a href="#programmes/gathering">General Gathering</a></li>
+			                        <li><a href="#programmes/fellowship">Fellowship</a></li>
 			                    </ul>
 			                </div>
 		        		</li>
@@ -77,7 +77,7 @@
 			                    </ul>
 			                </div>
 		        		</li>
-			            <li class="uk-active"><button id="fixed- button" type="button" style="min-height:auto;" class="uk-button uk-button-primary" uk-toggle="target: #join-modal">Join Us</button></li>
+			            <li class="uk-active"><button id="" type="button" style="min-height:auto;" class="uk-button uk-button-primary" uk-toggle="target: #join-modal">Join Us</button></li>
 		            </ul>
 	            </div>
 		    </div>
@@ -333,7 +333,7 @@
 							</div>
 						</div>
 					    <div class="uk-margin">
-					        <label class="uk-form-label">Program</label>
+					        <label class="uk-form-label">Programmes</label>
 					        <div class="uk-form-controls">
 					            <select class="uk-select">
 					                <option>Health</option>
@@ -352,6 +352,12 @@
 <!-- <script src="js/page.min.js"></script> -->
 <script>
 	$(document).ready(function() {
+		$( "*" ).click(function( event ) {
+			var target = $( event.target );
+			if( !target.is( "a" ) ) {
+				event.preventDefault();
+			}
+		});
 	});
 </script>
 <script>
@@ -363,20 +369,20 @@ function get_content(tpl, div) {
 	    $result.find('script').appendTo(div);
 	}, 'html');
 }
-// crossroads.addRoute('/{section}/{subsection}', function(section, subsection){  
-//   window.target = subsection;
-//   get_content('templates/'+section+'.html', '#content');
-//   removeHash();
-// });
+crossroads.addRoute('/{section}/{subsection}', function(section, subsection){  
+  get_content('templates/'+section+'.html', '#content');
+  window.target = subsection;
+  // removeHash();
+});
 crossroads.addRoute('/{section}', function(section,){  
   window.target = null;
   get_content('templates/'+section+'.html', '#content');
-  removeHash();
+  // removeHash();
 });
 crossroads.addRoute('/', function(id){  
   window.target = null;
   get_content('templates/home.html', '#content');
-  removeHash();
+  // removeHash();
 });
 
 //setup hasher

@@ -1,0 +1,147 @@
+<style>
+:root {
+    --bg: #fdfdfd;
+    --highlight1: #ED4264;
+    --highlight2: #FFEDBC;
+    --color: #1a1e24;
+}
+
+.list {
+    list-style: none;
+    width: 600px;
+    max-width: 90%;
+}
+
+.item {
+    display: block;
+    clear: both;
+    counter-increment: list;
+    padding-bottom: 4rem;
+    font-size: 1.1rem;
+    line-height: 1.375;
+    position: relative;
+}
+
+.item:before {
+    font: bold 2.25rem/1 var(--font-number);
+    font-size: 2.25rem;
+    content: counter(list);
+    width: 5rem;
+    height: 5rem;
+    float: left;
+    margin: 0 1.5rem 0.75rem 0;
+    color: var(--bg);
+    background: var(--highlight1) linear-gradient(to bottom right, var(--highlight1) 25%, var(--highlight2));
+    text-shadow: 0 0 2px var(--highlight1);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    shape-outside: ellipse();
+    z-index: 1;
+}
+
+.item:after {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: var(--highlight1);
+    z-index: -1;
+    border-top-left-radius: 3px;
+}
+
+.headline {
+    padding: 0rem 0 0 0;
+    margin: 0 0 1rem 0;
+}
+</style>
+<div class="uk-cover-container">
+    <canvas width="" height="420"></canvas>
+    <div class="uk-position-bottom uk-padding-small uk-text-left uk-light" style="z-index:1; width:100%;">
+    	<h2 class="uk-h2 uk-margin-small">BFA Impacts</h2>
+    </div>
+    <img src="../img/bfa1.jpg" alt="" uk-cover>
+</div>
+
+<div class="uk-section uk-container">
+	<div class="uk-child-width-1-2@m" uk-grid>
+		<div class="">
+		    <h3 class="uk-h3 uk-text-bold">Impacts</h3>
+			<ol class="list">
+				<li class="item">
+				    <h3 class="headline uk-h3">Number one</h3><span>We have been able to reach out to more than 400 children in Tanzania mainland and have them recruited in our program.</span>
+				</li>
+				<li class="item">
+				    <h3 class="headline uk-h3">Number two</h3><span>We have been able to sponsor 150 children whereas we basically provide their school fees and a complete set of their scholastic materials such as books and uniforms.</span>
+				</li>
+				<li class="item">
+				    <h3 class="headline uk-h3">Number three</h3><span>We have been able to fund for health insurance for at least 150 children including those that are fully sponsored by the organization.</span>
+				</li>
+				<li class="item">
+				    <h3 class="headline uk-h3">Number four</h3><span>We have been able to successfully conduct a number of charity outreaches in Dodoma, Dar es salaam, Arusha and Morogoro.</span>
+				</li>
+				<li class="item">
+				    <h3 class="headline uk-h3">Number five</h3><span>We have successfully done several Community Outreaches in Arusha.</span>
+				</li>
+				<li class="item">
+				    <h3 class="headline uk-h3">Number six</h3><span>Between the years 2016 to 2018 we have given out over 200 Christmas gift packs to the children.</span>
+				</li>
+				<li class="item">
+				    <h3 class="headline uk-h3">Number seven</h3><span>We have been able to consistently and successfully carry out the super Saturday program.</span>
+				</li>
+				<li class="item">
+				    <h3 class="headline uk-h3">Number eight</h3><span>We have been able to influence over 300 members to join in supporting the vision.</span>
+				</li>
+				<li class="item">
+				    <h3 class="headline uk-h3">Number nine</h3><span>The organization has won accreditation from the International Youth Federation (IYF) with accreditation number: AO/001213.</span>
+				</li>
+				<li class="item">
+				    <h3 class="headline uk-h3">Number ten</h3><span>We have been able to influence over 300 members to join in supporting the vision.</span>
+				</li>
+				<li class="item">
+				    <h3 class="headline uk-h3">Number eleven</h3><span>We have been able to raise a candle of hope, love and faith among the children as well as instilling good character values in them that will make them bold and determined to bring positive change in their communities starting with themselves.</span>
+				</li>
+			</ol>
+		</div>
+		<div class="uk-padding-large uk-padding-remove-vertical uk-cover-container">
+			<div class="uk-card uk-card-default uk-margin border-rounded">
+	            <div class="uk-card-media-top border-rounded-top">
+	                <img class="border-rounded-top" data-src="img/bfa8.jpg" uk-img>
+	            </div>
+	            <div class="uk-card-body">
+	                <h3 class="uk-card-title">Media Top</h3>
+	                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+	            </div>
+	        </div>
+	        <div class="uk-card uk-card-default uk-margin border-rounded">
+	            <div class="uk-card-media-top border-rounded-top">
+	                <img class="border-rounded-top" data-src="img/bfa8.jpg" uk-img>
+	            </div>
+	            <div class="uk-card-body">
+	                <h3 class="uk-card-title">Media Top</h3>
+	                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+	            </div>
+	        </div>
+	        <div class="uk-card uk-card-default uk-margin border-rounded">
+	            <div class="uk-card-media-top border-rounded-top">
+	                <img class="border-rounded-top" data-src="img/bfa8.jpg" uk-img>
+	            </div>
+	            <div class="uk-card-body">
+	                <h3 class="uk-card-title">Media Top</h3>
+	                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+	            </div>
+	        </div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		if (target) {
+			UIkit.scroll('#content', {offset: 100}).scrollTo('#' + target);
+		}
+	});
+</script>

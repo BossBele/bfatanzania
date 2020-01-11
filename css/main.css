@@ -130,7 +130,9 @@ a:hover {
 		font-size: 14px;
 	}
 }
-
+.height-min-medium {
+	min-height: 300px;
+}
 
 /**/
 [data-scrim-top],
