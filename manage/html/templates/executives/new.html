@@ -115,23 +115,20 @@
 		</div>
 	</div>
 	<p class="uk-text-right">
-		<button onclick="addSocial(this);" class="uk-button uk-button-default">Add <span uk-icon="icon: plus; ratio: 0.8"></span></button>
+		<button type="button" onclick="addSocial(this);" class="uk-button uk-button-default">Add <span uk-icon="icon: plus; ratio: 0.8"></span></button>
 	</p>
 
 	<div class="uk-margin-large-bottom"><br /></div>
 
     <div class="footer-buttons">
 		<div class="footer-padding">
-			<button type="submit" onclick="alert($('#dates-select').val());" class="uk-button uk-button-primary uk-icon uk-align-right uk-margin-remove-bottom"><span uk-icon="icon: check; "></span> Publish</button>
+			<button type="submit" class="uk-button uk-button-primary uk-icon uk-align-right uk-margin-remove-bottom"><span uk-icon="icon: check; "></span> Publish</button>
 		</div>
 	</div>
 </form>
 
 <script>
 	$(document).ready(function(){
-		$('#dates-select').select2({
-			tags: true,
-		});
 		$("#file-input-button").click(function() {
 			$("#file-input").trigger('click');
 		});
