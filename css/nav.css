@@ -654,7 +654,7 @@ Sidebar
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  background: url(../img/cd-arrow.svg);
+  /*background: url(../img/cd-arrow.svg);*/
 }
 .has-children.selected > ul {
   display: block;

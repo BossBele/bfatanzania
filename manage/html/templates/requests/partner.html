@@ -64,7 +64,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="uk-text-bold" uk-toggle="target: #partner-modal">
+            <td>BFA</td>
+            <td>+255764339147</td>            
+            <td>president@bfatanzania.org</td>
+            <td>Dar es Salaam</td>
+            <td>Health</td>
+        </tr>
+        <tr uk-toggle="target: #partner-modal">
             <td>BFA</td>
             <td>+255764339147</td>            
             <td>president@bfatanzania.org</td>
@@ -84,6 +91,19 @@
     <li><a href="#">8</a></li>
     <li><a href="#"><span uk-pagination-next></span></a></li>
 </ul>
+
+<div id="partner-modal" class="uk-modal-container uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h3 class="uk-h3 uk-margin-small-top">Ephraim (Name)</h3>
+        <div class="uk-margin-small">
+            <p>+255764339147</p>
+            <p>president@bfatanzania.org</p>
+            <p>Dar es Salaam</p>
+            <p>Health</p>
+        </div>
+    </div>
+</div>
 
 <script>
 $("#search").keyup(function() {
