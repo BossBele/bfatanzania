@@ -365,9 +365,11 @@
 <!-- <script src="js/page.min.js"></script> -->
 <script>
 	$(document).ready(function() {
-		$( "*" ).click(function( event ) {
-			var target = $( event.target );
-			if( !target.is( "a" ) ) {
+		$("*").click(function( event ) {
+			var target = $(event.target);
+			if(!target.closest("a")) {
+				// !target.is("a")
+				// alert( event.isDefaultPrevented() );
 				event.preventDefault();
 			}
 		});
