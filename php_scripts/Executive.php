@@ -80,19 +80,39 @@ class Executive
     public function retrieveExecutive()
     {
         $connection = new Connection();
-        $sql = "select * from course";
+        $sql = "select * from executives";
         $result = mysqli_query($connection->connect(), $sql);
 
         $data = array();
+        $data_social = array();
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
+                $sql2 = "select * from social_media where executive_id = '" . $row['id'] . "'";
+                $result2 = mysqli_query($connection->connect(), $sql2);
                 array_push($data, array(
                     'id' => $row['id'],
-                    'code' => $row['code'],
-                    'name' => $row['name'],
-                    'duration' => $row['duration'],
-                    'dates' => $row['date']
+                    'name' => $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'],
+                    'first_name' => $row['first_name'],
+                    'middle_name' => $row['middle_name'],
+                    'last_name' => $row['last_name'],
+                    'title' => $row['title'],
+                    'phone' => $row['phone'],
+                    'email' => $row['email'],
+                    'photo' => $row['photo'],
+                    'bio' => $row['bio']
                 ));
+                if ($result2->num_rows > 0) {
+                    $count = 1;
+                    while ($row2 = $result2->fetch_assoc()) {
+                        array_push($data_social, array(
+                            'platform' => $row2['platform'],
+                            'user_name' => $row2['user_name']
+                        ));
+                        $data[0]['social'] = $data_social;
+                        $count++;
+                    }
+                }
+
             }
         }
 
