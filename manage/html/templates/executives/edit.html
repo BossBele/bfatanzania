@@ -89,9 +89,11 @@
 
 <!--update form-->
 <div id="update_form" style="display: none">
-    <form class="uk-form-stacked" id="executive_form" enctype="multipart/form-data">
+    <form class="uk-form-stacked" id="executive_form_edit" enctype="multipart/form-data">
         <div class="">
-            <label for="file-input" class="uk-card uk-card-default uk-height-medium uk-display-block uk-width-medium" data-cropzee="file-input"></label>
+            <label id="img_container" for="file-input" class="uk-card uk-card-default uk-height-medium uk-display-block uk-width-medium" data-cropzee="file-input">
+
+            </label>
             <div class="uk-margin">
                 <div uk-form-custom>
                     <input id="file-input" name="file-input" type="file">
@@ -99,6 +101,7 @@
                     <div id="file-input-button" class="uk-width-1-1 uk-height-1-1 uk-position-absolute uk-position-z-index uk-position-top-left cursor-pointer"></div>
                 </div>
             </div>
+            
         </div>
 
         <div class="uk-child-width-expand@s uk-margin-medium-top" uk-grid>
@@ -204,9 +207,12 @@
 
         <div class="uk-margin-large-bottom"><br /></div>
 
-        <input name="add_executive" type="hidden" value="1">
+        <input name="edit_executive" type="hidden" value="1">
+        <input name="executive_id" id="executive_id" type="hidden">
         <input name="user_names" id="user_name" type="hidden">
         <input name="platforms" id="platform" type="hidden">
+        <input type="hidden" id="resumes" name="resumes">
+        <input type="hidden" id="photos" name="photos">
 
 
 
@@ -261,6 +267,29 @@
 
     $(document).ready(function () {
         retrieveExecutive();
+    });
+
+    $('#executive_form_edit').on('submit', function (e) {
+        e.preventDefault();
+
+
+        var usernames = document.getElementsByName("user_name");
+        var vals=[];
+        for (var i=0, n=usernames.length;i<n;i++) {
+            vals.push(usernames[i].value);
+        }
+
+        var platform = document.getElementsByName("platform");
+        var val=[];
+        for (var i=0, n=platform.length;i<n;i++) {
+            val.push(platform[i].value);
+        }
+
+        document.getElementById('platform').value = val;
+        document.getElementById('user_name').value = vals;
+
+        editExecutive(this);
+
     });
 
 </script>

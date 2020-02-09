@@ -38,12 +38,24 @@ class Executive
         echo json_encode($response);
     }
 
-    public function updateExecutive($course_id, $code_edit, $name_edit, $duration_edit)
+    public function updateExecutive($id, $first_name, $middle_name, $last_name, $title, $phone,
+                                    $email, $bio, $uploadedFile, $uploadedResume, $platform, $username)
     {
         $connection = new Connection();
 
-        $sql = "update course set code = '" . $code_edit . "', name = '" . $name_edit . "', duration ='" . $duration_edit . "' where id ='" . $course_id . "'";
+        $sql = "update executives set first_name = '" . $first_name . "', middle_name = '" . $middle_name . "', 
+                last_name ='" . $last_name . "', title = '" . $title . "', phone = '" . $phone . "'
+                 , email = '" . $email . "', bio = '" . $bio . "', photo = '" . $uploadedFile . "'
+                  , resume = '" . $uploadedResume . "' where id ='" . $id . "'";
         $result = mysqli_query($connection->connect(), $sql);
+
+        /*insert in social media table*/
+        foreach ($platform as $key => $item) {
+            $sql_social = "update social_media set platform = '" . $item . "', user_name = '" . $username[$key] . "'
+                            where executive_id = '" . $id . "'";
+            $result = mysqli_query($connection->connect(), $sql_social);
+        }
+        /*end social media table*/
 
         $response = array();
         if ($result) {
@@ -99,7 +111,8 @@ class Executive
                     'phone' => $row['phone'],
                     'email' => $row['email'],
                     'photo' => $row['photo'],
-                    'bio' => $row['bio']
+                    'bio' => $row['bio'],
+                    'resumes' => $row['resume']
                 ));
                 if ($result2->num_rows > 0) {
                     $count = 1;
