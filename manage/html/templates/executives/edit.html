@@ -209,8 +209,8 @@
 
         <input name="edit_executive" type="hidden" value="1">
         <input name="executive_id" id="executive_id" type="hidden">
-        <input name="user_names" id="user_name" type="hidden">
-        <input name="platforms" id="platform" type="hidden">
+        <input name="user_names" id="user_names" type="hidden">
+        <input name="platforms" id="platforms" type="hidden">
         <input type="hidden" id="resumes" name="resumes">
         <input type="hidden" id="photos" name="photos">
 
@@ -285,8 +285,10 @@
             val.push(platform[i].value);
         }
 
-        document.getElementById('platform').value = val;
-        document.getElementById('user_name').value = vals;
+        document.getElementById('platforms').value = val;
+        document.getElementById('user_names').value = vals;
+
+        // console.log(document.getElementById('platforms').value);
 
         editExecutive(this);
 

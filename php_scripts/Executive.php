@@ -50,9 +50,15 @@ class Executive
         $result = mysqli_query($connection->connect(), $sql);
 
         /*insert in social media table*/
+
+        foreach ($platform as $item) {
+            $sql_social_delete = "DELETE FROM social_media WHERE executive_id='" . $id . "'";
+            mysqli_query($connection->connect(), $sql_social_delete);
+        }
+
         foreach ($platform as $key => $item) {
-            $sql_social = "update social_media set platform = '" . $item . "', user_name = '" . $username[$key] . "'
-                            where executive_id = '" . $id . "'";
+            $sql_social = "insert into social_media (executive_id, platform, user_name)
+                values ('" . $id . "','" . $item . "','" . $username[$key] . "')";
             $result = mysqli_query($connection->connect(), $sql_social);
         }
         /*end social media table*/
@@ -179,6 +185,16 @@ class Executive
         }
 
         echo json_encode($data);
+    }
+
+    public function sendExecutiveEmail($sender_name, $sender_email, $sender_text, $email_president)
+    {
+        $to = $email_president;
+        $subject = "Direct Contact";
+        $txt = $sender_text;
+        $headers = "From: ".$sender_email . "\r\n";
+
+        mail($to,$subject,$txt,$headers);
     }
 
 }

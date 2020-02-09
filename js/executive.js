@@ -108,57 +108,59 @@ function updateExecutive(index) {
         img_container.appendChild(image);
 
 
-        // Container <div> where dynamic content will be placed
-        var platform_container = document.getElementById("platform_div");
-        var social_container = document.getElementById("social_div");
-        // Clear previous contents of the container
-        while (platform_container.hasChildNodes()) {
-            platform_container.removeChild(platform_container.lastChild);
-        }
+        if (data.social !== undefined) {
+            // Container <div> where dynamic content will be placed
+            var platform_container = document.getElementById("platform_div");
+            var social_container = document.getElementById("social_div");
+            // Clear previous contents of the container
+            while (platform_container.hasChildNodes()) {
+                platform_container.removeChild(platform_container.lastChild);
+            }
 
-        while (social_container.hasChildNodes()) {
-            social_container.removeChild(social_container.lastChild);
-        }
+            while (social_container.hasChildNodes()) {
+                social_container.removeChild(social_container.lastChild);
+            }
 
-        for (i = 1; i < data.social.length; i++) {
-            data.social.forEach(function (entry) {
-                // Append a node with a random text
-                /*label*/
-                var label = document.createElement("label");
-                label.setAttribute("class", "uk-form-label");
-                label.setAttribute('for', 'college');
-                label.append('Platform');
-                /*label end*/
+            for (i = 1; i < data.social.length; i++) {
+                data.social.forEach(function (entry) {
+                    // Append a node with a random text
+                    /*label*/
+                    var label = document.createElement("label");
+                    label.setAttribute("class", "uk-form-label");
+                    label.setAttribute('for', 'college');
+                    label.append('Platform');
+                    /*label end*/
 
-                /*input*/
-                var input = document.createElement("input");
-                input.type = "text";
-                input.className = "uk-input";
-                input.name = "platform";
-                input.value = entry.platform;
-                platform_container.appendChild(label);
-                platform_container.appendChild(input);
-                // Append a line break
-                platform_container.appendChild(document.createElement("br"));
+                    /*input*/
+                    var input = document.createElement("input");
+                    input.type = "text";
+                    input.className = "uk-input";
+                    input.name = "platform";
+                    input.value = entry.platform;
+                    platform_container.appendChild(label);
+                    platform_container.appendChild(input);
+                    // Append a line break
+                    platform_container.appendChild(document.createElement("br"));
 
-                /*label*/
-                var label2 = document.createElement("label");
-                label2.setAttribute("class", "uk-form-label");
-                label2.setAttribute('for', 'college');
-                label2.append('Username');
+                    /*label*/
+                    var label2 = document.createElement("label");
+                    label2.setAttribute("class", "uk-form-label");
+                    label2.setAttribute('for', 'college');
+                    label2.append('Username');
 
-                /*input*/
-                var input2 = document.createElement("input");
-                input2.type = "text";
-                input2.className = "uk-input";
-                input2.name = "user_name";
-                input2.value = entry.user_name;
-                social_container.appendChild(label2);
-                social_container.appendChild(input2);
-                // Append a line break
-                social_container.appendChild(document.createElement("br"));
+                    /*input*/
+                    var input2 = document.createElement("input");
+                    input2.type = "text";
+                    input2.className = "uk-input";
+                    input2.name = "user_name";
+                    input2.value = entry.user_name;
+                    social_container.appendChild(label2);
+                    social_container.appendChild(input2);
+                    // Append a line break
+                    social_container.appendChild(document.createElement("br"));
 
-            });
+                });
+            }
         }
 
     }
@@ -201,7 +203,7 @@ function bindData(result) {
 
         /*a tag*/
         var a = document.createElement("a");
-        a.href='#executive-profile';
+        a.href = '#executive-profile';
         a.id = 'view_president';
         /*a tag*/
 
@@ -236,13 +238,13 @@ function bindData(result) {
         div2.appendChild(p);
 
         div.appendChild(image);
-        if (result[i].title === "President"){
+        if (result[i].title === "President") {
             president_info = result[i];
             a.appendChild(div);
             a.appendChild(div2);
             div_.appendChild(a);
             div_.appendChild(document.createElement("br"));
-        }else {
+        } else {
             div_.appendChild(div);
             div_.appendChild(div2);
             div_.appendChild(document.createElement("br"));
@@ -251,4 +253,28 @@ function bindData(result) {
         executive_container.appendChild(div_);
 
     }
+}
+
+function sendEmail(data) {
+
+    $.ajax({
+        url: site_url,
+        type: "post",
+        dataType: "json",
+        contentType: false,
+        cache: false,
+        processData: false,
+        data: new FormData(data),
+        success: function (result) {
+
+            // if (result[0].message === "success") {
+            //     alert('Executive added');
+            //     $('#executive_form').trigger("reset");
+            // } else {
+            //     alert('Executive exists');
+            //     $('#executive_form').trigger("reset");
+            // }
+
+        }
+    });
 }

@@ -184,6 +184,16 @@ if ($_POST) {
 
             }
             break;
+        /*send email*/
+        case isset($_POST['send_email']):
+            $sender_name = $_POST['sender_name'];
+            $sender_email = $_POST['sender_email'];
+            $sender_text = $_POST['sender_text'];
+            $email_president = $_POST['email_president'];
+//            print("<pre>" . print_r($_POST, true) . "</pre>");
+
+            $executive->sendExecutiveEmail($sender_name, $sender_email, $sender_text, $email_president);
+            break;
         /*delete executive*/
         case isset($_POST['delete_course']):
             $executive->deleteExecutive($_POST['course_id']);
