@@ -1,4 +1,5 @@
 var all_executives;
+var president_info;
 
 function addExecutive(data) {
 
@@ -80,6 +81,8 @@ function retrieveExecutive() {
 function updateExecutive(index) {
     if (all_executives !== []) {
 
+        console.log(all_executives);
+
         document.getElementById('edit_form').style.display = 'none';
         document.getElementById('update_form').style.display = 'block';
         var data = all_executives[index];
@@ -99,7 +102,7 @@ function updateExecutive(index) {
             img_container.removeChild(img_container.lastChild);
         }
         var image = document.createElement("img");
-        image.setAttribute("src", document.location.origin+'/uploads/'+data.photo);
+        image.setAttribute("src", document.location.origin + '/uploads/' + data.photo);
         image.style.height = '100%';
         image.style.width = '100%';
         img_container.appendChild(image);
@@ -157,6 +160,95 @@ function updateExecutive(index) {
 
             });
         }
+
+    }
+}
+
+function displayExecutiveTeam() {
+    var data = {retrieve_team: "yes"};
+    $.ajax({
+        url: site_url,
+        type: "get",
+        dataType: "json",
+        data: data,
+        success: function (result) {
+            bindData(result);
+        }
+    });
+}
+
+function bindData(result) {
+    // Container <div> where dynamic content will be placed
+    var executive_container = document.getElementById("executive_div");
+    // Clear previous contents of the container
+    while (executive_container.hasChildNodes()) {
+        executive_container.removeChild(executive_container.lastChild);
+    }
+
+    for (i = 0; i < result.length; i++) {
+
+        // Append a node with a random text
+        var div_ = document.createElement("div");
+        div_.setAttribute("class", "uk-card uk-card-default uk-card-hover");
+        div_.style.margin = '2%';
+
+
+        /*div 1*/
+        var div = document.createElement("div");
+        div.setAttribute("class", "uk-card-media-top");
+        div.setAttribute('id', i);
+        /*div 1 end*/
+
+        /*a tag*/
+        var a = document.createElement("a");
+        a.href='#executive-profile';
+        a.id = 'view_president';
+        /*a tag*/
+
+        /*image*/
+        var image = document.createElement("img");
+        image.setAttribute("src", document.location.origin + '/uploads/' + result[i].photo);
+        image.setAttribute('id', i);
+        image.style.height = '100%';
+        image.style.width = '100%';
+        /*end image*/
+
+        /*div 2*/
+        var div2 = document.createElement('div');
+        div2.setAttribute('class', 'uk-padding-small uk-text-center');
+        div2.setAttribute('id', i);
+        /*end div 2*/
+
+        /*h4*/
+        var h4 = document.createElement('h4');
+        h4.setAttribute('class', 'uk-h4 uk-margin-remove');
+        h4.setAttribute('id', i);
+        h4.append(result[i].name);
+        /*h4*/
+
+        /*p*/
+        var p = document.createElement('p');
+        p.setAttribute('class', 'uk-text-muted uk-margin-remove');
+        p.setAttribute('id', i);
+        p.append(result[i].title);
+        /*p*/
+        div2.appendChild(h4);
+        div2.appendChild(p);
+
+        div.appendChild(image);
+        if (result[i].title === "President"){
+            president_info = result[i];
+            a.appendChild(div);
+            a.appendChild(div2);
+            div_.appendChild(a);
+            div_.appendChild(document.createElement("br"));
+        }else {
+            div_.appendChild(div);
+            div_.appendChild(div2);
+            div_.appendChild(document.createElement("br"));
+        }
+
+        executive_container.appendChild(div_);
 
     }
 }

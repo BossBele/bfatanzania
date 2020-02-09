@@ -1,5 +1,6 @@
 <?php
 include 'Executive.php';
+include 'CommonFunction.php';
 include 'Connection.php';
 
 $executive = new Executive();
@@ -7,7 +8,7 @@ $executive = new Executive();
 if ($_POST) {
 
     switch ($_POST) {
-        /*add course*/
+        /*add executive*/
         case isset($_POST['add_executive']):
             $uploadDir = '../uploads/';
             $uploadRe = '../resumes/';
@@ -91,7 +92,7 @@ if ($_POST) {
             }
 
             break;
-        /*edit course*/
+        /*edit executive*/
         case isset($_POST['edit_executive']):
             $uploadDir = '../uploads/';
             $uploadRe = '../resumes/';
@@ -183,7 +184,7 @@ if ($_POST) {
 
             }
             break;
-        /*delete course*/
+        /*delete executive*/
         case isset($_POST['delete_course']):
             $executive->deleteExecutive($_POST['course_id']);
             break;
@@ -195,9 +196,12 @@ if ($_POST) {
 
 if ($_GET) {
     switch ($_GET) {
-        /*retrieve all courses*/
+        /*retrieve all executive*/
         case isset($_GET['retrieve']):
             $executive->retrieveExecutive();
+            break;
+        case isset($_GET['retrieve_team']):
+            $executive->retrieveExecutiveTeam();
             break;
         default:
             break;

@@ -1,10 +1,10 @@
 <style>
-	
+
 </style>
 <div class="uk-cover-container">
     <canvas width="" height="420"></canvas>
     <div class="uk-position-bottom uk-padding-small uk-text-left uk-light" style="z-index:1; width:100%;">
-    	<h2 class="uk-h2 uk-margin-small">Executives Team</h2>
+        <h2 class="uk-h2 uk-margin-small">Executives Team</h2>
     </div>
     <img src="https://source.unsplash.com/random" alt="" uk-cover>
 </div>
@@ -23,58 +23,20 @@
 </div> -->
 
 <div class="uk-section uk-section-default">
-	<div class="uk-container">
-		<div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid>
-			<a href="#executive-profile">
-		        <div class="uk-card uk-card-default uk-card-hover">
-		            <div class="uk-card-media-top">
-		                <img class="border-rounded-top" src="https://source.unsplash.com/400x400/?person" alt="">
-		            </div>
-		            <div class="uk-padding-small uk-text-center">
-		                <h4 class="uk-h4 uk-margin-remove">Elisante Ephraim</h4>
-		                <p class="uk-text-muted uk-margin-remove">President</p>
-		            </div>
-		        </div>
-		    </a>
-		    <div class="cursor-pointer">
-		        <div class="uk-card uk-card-default uk-card-hover">
-		            <div class="uk-card-media-top">
-		                <img class="border-rounded-top" src="https://source.unsplash.com/400x400/?person" alt="">
-		            </div>
-		            <div class="uk-padding-small uk-text-center">
-		                <h4 class="uk-h4 uk-margin-remove">Elizabeth Njau</h4>
-		                <p class="uk-text-muted uk-margin-remove">Title</p>
-		            </div>
-		        </div>
-		    </div>
-		    <div class="cursor-pointer">
-		        <div class="uk-card uk-card-default uk-card-hover">
-		            <div class="uk-card-media-top">
-		                <img class="border-rounded-top" src="https://source.unsplash.com/400x400/?person" alt="">
-		            </div>
-		            <div class="uk-padding-small uk-text-center">
-		                <h4 class="uk-h4 uk-margin-remove">Gift Ngomuo</h4>
-		                <p class="uk-text-muted uk-margin-remove">Title</p>
-		            </div>
-		        </div>
-		    </div>
-		    <div class="cursor-pointer">
-		        <div class="uk-card uk-card-default uk-card-hover">
-		            <div class="uk-card-media-top">
-		                <img class="border-rounded-top" src="https://source.unsplash.com/400x400/?person" alt="">
-		            </div>
-		            <div class="uk-padding-small uk-text-center">
-		                <h4 class="uk-h4 uk-margin-remove">Roy Degera</h4>
-		                <p class="uk-text-muted uk-margin-remove">Title</p>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	</div>
+    <div class="uk-container">
+        <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid id="executive_div">
+
+        </div>
+    </div>
 </div>
 
 <script>
-	$(document).ready(function() {
-		
-	});
+    $(document).ready(function () {
+        displayExecutiveTeam();
+    });
+
+    var site_url = '../php_scripts/requestHandler.php';
+
 </script>
+
+<script src="../js/executive.js"></script>
