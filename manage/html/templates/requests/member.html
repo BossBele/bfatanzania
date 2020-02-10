@@ -53,7 +53,7 @@
 </div>
 <hr class="uk-divider-icon">
 
-<table class="uk-table uk-table-striped uk-table-hover uk-table-responsive">
+<table class="uk-table uk-table-striped uk-table-hover uk-table-responsive" id="member_table">
     <thead>
         <tr>
             <th>Name</th>
@@ -63,34 +63,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="uk-text-bold" uk-toggle="target: #member-modal">
-            <td>Ephraim</td>
-            <td>+255764339147</td>            
-            <td>president@bfatanzania.org</td>
-            <td class="uk-table-expand uk-text-truncate">
-                As a young visionary leader, Elisante Ephraim serves as the President of Builders Of Future Africa of
-                which he began since September 2017 and formerly served as a President of the BHA(Children’s
-                support foundation) in the year of 2016/2017.
-                &lt;br&gt;
-                He is also a CEO &amp; Director General at Africamoja Youth Society a role which he assumed early January
-                2019. Before his appointment, Elisante was Director General leading all Africamoja activities in
-                Tanzania.
-            </td>
-        </tr>
-        <tr uk-toggle="target: #member-modal">
-            <td>Ephraim</td>
-            <td>+255764339147</td>            
-            <td>president@bfatanzania.org</td>
-            <td class="uk-table-expand uk-text-truncate">
-                As a young visionary leader, Elisante Ephraim serves as the President of Builders Of Future Africa of
-                which he began since September 2017 and formerly served as a President of the BHA(Children’s
-                support foundation) in the year of 2016/2017.
-                &lt;br&gt;
-                He is also a CEO &amp; Director General at Africamoja Youth Society a role which he assumed early January
-                2019. Before his appointment, Elisante was Director General leading all Africamoja activities in
-                Tanzania.
-            </td>
-        </tr>
+
     </tbody>
 </table>
 
@@ -146,5 +119,10 @@ $(document).ready(function() {
     $("[data-unlink]").click(function(e) {
         e.preventDefault();
     });
+
+    retrieveMember();
+
 });
 </script>
+
+<script src="../../../../js/member.js"></script>

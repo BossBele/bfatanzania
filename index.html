@@ -1,455 +1,502 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- jquery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<!-- UIkit CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css">
-	<!-- UIkit JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
-	<!-- fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa|PT+Sans&display=swap" rel="stylesheet">
-	<!-- <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'> -->
-	<!--  -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-signals/1.0.0/js-signals.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/hasher/1.2.0/hasher.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/crossroads/0.12.2/crossroads.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/inorganik/countUp.js/dist/countUp.js" type="module"></script>
-	<!-- <script src="js/demo.js" type="module" defer></script> -->
-	<!-- <script src="js/countUp-jquery.js" defer></script> -->
-	<script src="https://unpkg.com/onscreen/dist/on-screen.umd.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/sarcadass/granim.js@latest/dist/granim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/cowboy/jquery-throttle-debounce/jquery.ba-throttle-debounce.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css">
-	<link rel="stylesheet" href="css/main.css">
-	<title>BFA Tanzania. Builders For Future Africa. bfatanzania.org</title>
-	<style>
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css">
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|PT+Sans&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'> -->
+    <!--  -->
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-signals/1.0.0/js-signals.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hasher/1.2.0/hasher.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossroads/0.12.2/crossroads.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/inorganik/countUp.js/dist/countUp.js" type="module"></script>
+    <!-- <script src="js/demo.js" type="module" defer></script> -->
+    <!-- <script src="js/countUp-jquery.js" defer></script> -->
+    <script src="https://unpkg.com/onscreen/dist/on-screen.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sarcadass/granim.js@latest/dist/granim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cowboy/jquery-throttle-debounce/jquery.ba-throttle-debounce.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>BFA Tanzania. Builders For Future Africa. bfatanzania.org</title>
+    <style>
+    </style>
 </head>
 <body>
 <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container;" style="z-index: 999999;">
-	<nav style="border-bottom: 1px solid #e0e0e0;" class="uk-navbar-container uk-display-block bg-white" uk-navbar="dropbar: true; delay-hide: 500;">
-		<div class="uk-container uk-container-expand">
-			<div class="uk-grid uk-margin-remove-left" uk-navbar>
-				<ul id="logo" class="uk-navbar-nav">
-					<li class="uk-active"><a href="#home"><img style="height:58px;" src="logo.png"></a></li>
-				</ul>
-				<ul class="uk-navbar-nav uk-navbar-right uk-flex-right" style="width:100%;">
-					<li class="uk-active">
-						<a href="#about">About Us</a>
-						<div class="uk-navbar-dropdown">
-							<ul class="uk-nav uk-navbar-dropdown-nav">
-								<li class="uk-active"><a href="#about">Who We Are</a></li>
-								<li><a href="#impacts">Impacts</a></li>
-								<!-- <li><a href="#">Item</a></li> -->
-								<li><a href="#executives-team">Executives Team</a></li>
-							</ul>
-						</div>
-					</li>
-					<li class="uk-active">
-						<a href="#programmes">Programmes</a>
-						<div class="uk-navbar-dropdown">
-							<ul class="uk-nav uk-navbar-dropdown-nav">
-								<li class="uk-active"><a href="#programmes/outreach">Outreach</a></li>
-								<li><a class="data-link" href="#programmes/saturday">Saturday</a></li>
-								<li><a href="#programmes/xmas">X-mas Gifts</a></li>
-								<li><a href="#programmes/girlchapter">Girl Chapter</a></li>
-								<li><a href="#programmes/gathering">General Gathering</a></li>
-								<li><a href="#programmes/fellowship">Fellowship</a></li>
-							</ul>
-						</div>
-					</li>
-					<li class="uk-active">
-						<a href="#">Career</a>
-						<div class="uk-navbar-dropdown">
-							<ul class="uk-nav uk-navbar-dropdown-nav">
-								<li class="uk-active">
-									<a href="#">Jobs</a>
-								</li>
-								<li><a href="#">Internship</a></li>
-								<li><a href="#">Volunteering</a></li>
-							</ul>
-						</div>
-					</li>
-					<li class="uk-active"><button id="" type="button" style="min-height:auto;" class="uk-button uk-button-primary" uk-toggle="target: #join-modal">Join Us</button></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+    <nav style="border-bottom: 1px solid #e0e0e0;" class="uk-navbar-container uk-display-block bg-white"
+         uk-navbar="dropbar: true; delay-hide: 500;">
+        <div class="uk-container uk-container-expand">
+            <div class="uk-grid uk-margin-remove-left" uk-navbar>
+                <ul id="logo" class="uk-navbar-nav">
+                    <li class="uk-active"><a href="#home"><img style="height:58px;" src="logo.png"></a></li>
+                </ul>
+                <ul class="uk-navbar-nav uk-navbar-right uk-flex-right" style="width:100%;">
+                    <li class="uk-active">
+                        <a href="#about">About Us</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-active"><a href="#about">Who We Are</a></li>
+                                <li><a href="#impacts">Impacts</a></li>
+                                <!-- <li><a href="#">Item</a></li> -->
+                                <li><a href="#executives-team">Executives Team</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="uk-active">
+                        <a href="#programmes">Programmes</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-active"><a href="#programmes/outreach">Outreach</a></li>
+                                <li><a class="data-link" href="#programmes/saturday">Saturday</a></li>
+                                <li><a href="#programmes/xmas">X-mas Gifts</a></li>
+                                <li><a href="#programmes/girlchapter">Girl Chapter</a></li>
+                                <li><a href="#programmes/gathering">General Gathering</a></li>
+                                <li><a href="#programmes/fellowship">Fellowship</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="uk-active">
+                        <a href="#">Career</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-active">
+                                    <a href="#">Jobs</a>
+                                </li>
+                                <li><a href="#">Internship</a></li>
+                                <li><a href="#">Volunteering</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="uk-active">
+                        <button id="" type="button" style="min-height:auto;" class="uk-button uk-button-primary"
+                                uk-toggle="target: #join-modal">Join Us
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </div> <!-- .cd-main-header -->
 
 <main class="cd-main-content">
-	<div class="content-wrapper">
-		<!-- Page Content -->
-		<div id="page-content-wrapper uk-margin-top">
+    <div class="content-wrapper">
+        <!-- Page Content -->
+        <div id="page-content-wrapper uk-margin-top">
 
-			<div class="uk-container uk-container-medium uk-width-1-1 uk-padding-remove-horizontal" id="content">
+            <div class="uk-container uk-container-medium uk-width-1-1 uk-padding-remove-horizontal" id="content">
 
-			</div>
-		</div>
-		<!-- /#page-content-wrapper -->
-	</div> <!-- .content-wrapper -->
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div> <!-- .content-wrapper -->
 </main> <!-- .cd-main-content -->
 
 <div class="uk-section">
-	<div class="uk-container">
-		<div class="uk-child-width-1-4@s uk-grid-small" uk-grid>
-			<div class="">
+    <div class="uk-container">
+        <div class="uk-child-width-1-4@s uk-grid-small" uk-grid>
+            <div class="">
 
-			</div>
-			<div class="">
-				<h4 class="uk-h4 uk-text-uppercase">Contact Us</h4>
-				<ul class="uk-list uk-list-large">
-					<li><span uk-icon="mail"></span> info@bfatanzania.org</li>
-					<li><span uk-icon="phone"></span> +255 767 544 371</li>
-					<li><span uk-icon="phone"></span> +255 629 017 000</li>
-					<li><span uk-icon=""></span> P.O. Box 15170 Arusha, Tanzania</li>
-					<li><span uk-icon="location"></span> Plot #2773, Lenjani village, 2km uphill from Habari Maalum, Arusha, Tanzania</li>
-				</ul>
-			</div>
-			<div class="">
-				<h4 class="uk-h4 uk-text-uppercase">Get in Touch</h4>
-				<form>
-					<div class="uk-margin">
-						<div class="uk-width-1-1 uk-inline">
-							<span class="uk-form-icon" uk-icon="icon: user"></span>
-							<input class="uk-input" type="text" placeholder="Name">
-						</div>
-					</div>
-					<div class="uk-margin">
-						<div class="uk-width-1-1 uk-inline">
-							<span class="uk-form-icon" uk-icon="icon: mail"></span>
-							<input class="uk-input" type="text" placeholder="Email">
-						</div>
-					</div>
-					<div class="uk-margin">
-						<textarea class="uk-textarea" rows="5" style="resize:none;" placeholder="Write your message"></textarea>
-					</div>
-					<button class="uk-button uk-button-primary">Send</button>
-				</form>
-			</div>
-			<div>
-				<h4 class="uk-h4 uk-text-uppercase">Connect With Us</h4>
-				<ul class="uk-list uk-list-large uk-link-muted">
-					<li>
-						<a href="https://facebook.com/bfatanzania" target="_blank" rel="noreferrer noopener">
-							<span uk-icon="facebook"></span> Builders of Future Africa</li>
-					</a>
-					<li>
-						<a href="https://instagram.com/bfatanzania" target="_blank" rel="noreferrer noopener">
-							<span uk-icon="instagram"></span> @bfatanzania</li>
-					</a>
-					<li>
-						<a href="https://twitter.com/bfatanzania" target="_blank" rel="noreferrer noopener">
-							<span uk-icon="twitter"></span> @bfatanzania</li>
-					</a>
-					<li>
-						<a href="https://www.youtube.com/channel/UCOa_jD0TWxIdgSNDH6azv9Q" target="_blank" rel="noreferrer noopener">
-							<span uk-icon="youtube"></span> Youtube
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div>
-			<span class="uk-icon-button" uk-icon="icon: ">&copy;</span>
-			<small class="uk-display-inline-block">2020 bfa. All Rights Reserved</small>
-		</div>
-	</div>
+            </div>
+            <div class="">
+                <h4 class="uk-h4 uk-text-uppercase">Contact Us</h4>
+                <ul class="uk-list uk-list-large">
+                    <li><span uk-icon="mail"></span> info@bfatanzania.org</li>
+                    <li><span uk-icon="phone"></span> +255 767 544 371</li>
+                    <li><span uk-icon="phone"></span> +255 629 017 000</li>
+                    <li><span uk-icon=""></span> P.O. Box 15170 Arusha, Tanzania</li>
+                    <li><span uk-icon="location"></span> Plot #2773, Lenjani village, 2km uphill from Habari Maalum,
+                        Arusha, Tanzania
+                    </li>
+                </ul>
+            </div>
+            <div class="">
+                <h4 class="uk-h4 uk-text-uppercase">Get in Touch</h4>
+                <form>
+                    <div class="uk-margin">
+                        <div class="uk-width-1-1 uk-inline">
+                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                            <input class="uk-input" type="text" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <div class="uk-width-1-1 uk-inline">
+                            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                            <input class="uk-input" type="text" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <textarea class="uk-textarea" rows="5" style="resize:none;"
+                                  placeholder="Write your message"></textarea>
+                    </div>
+                    <button class="uk-button uk-button-primary">Send</button>
+                </form>
+            </div>
+            <div>
+                <h4 class="uk-h4 uk-text-uppercase">Connect With Us</h4>
+                <ul class="uk-list uk-list-large uk-link-muted">
+                    <li>
+                        <a href="https://facebook.com/bfatanzania" target="_blank" rel="noreferrer noopener">
+                            <span uk-icon="facebook"></span> Builders of Future Africa</li>
+                    </a>
+                    <li>
+                        <a href="https://instagram.com/bfatanzania" target="_blank" rel="noreferrer noopener">
+                            <span uk-icon="instagram"></span> @bfatanzania</li>
+                    </a>
+                    <li>
+                        <a href="https://twitter.com/bfatanzania" target="_blank" rel="noreferrer noopener">
+                            <span uk-icon="twitter"></span> @bfatanzania</li>
+                    </a>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCOa_jD0TWxIdgSNDH6azv9Q" target="_blank"
+                           rel="noreferrer noopener">
+                            <span uk-icon="youtube"></span> Youtube
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <span class="uk-icon-button" uk-icon="icon: ">&copy;</span>
+            <small class="uk-display-inline-block">2020 bfa. All Rights Reserved</small>
+        </div>
+    </div>
 </div>
 <!-- Join modal -->
 <div id="join-modal" class="uk-flex-top" uk-modal>
-	<div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
-		<button class="uk-modal-close-default" type="button" uk-close></button>
-		<h3 class="uk-h3">Join Us</h3>
-		<p class="uk-text-center">
-			<button class="uk-button uk-button-primary" type="button" uk-toggle="target: #member-join-form-modal">Become a Member</button>
-		</p>
-		<p class="uk-text-center">
-			<button class="uk-button uk-button-primary" type="button" uk-toggle="target: #partner-join-form-modal">Become a Partner</button>
-		</p>
-		<p class="uk-text-center">
-			<button class="uk-button uk-button-primary" type="button" uk-toggle="target: #sponsor-join-form-modal">Become a Sponsor</button>
-		</p>
-	</div>
+    <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h3 class="uk-h3">Join Us</h3>
+        <p class="uk-text-center">
+            <button class="uk-button uk-button-primary" type="button" uk-toggle="target: #member-join-form-modal">Become
+                a Member
+            </button>
+        </p>
+        <p class="uk-text-center">
+            <button class="uk-button uk-button-primary" type="button" uk-toggle="target: #partner-join-form-modal">
+                Become a Partner
+            </button>
+        </p>
+        <p class="uk-text-center">
+            <button class="uk-button uk-button-primary" type="button" uk-toggle="target: #sponsor-join-form-modal">
+                Become a Sponsor
+            </button>
+        </p>
+    </div>
 </div>
 <!-- Join form modal -->
 <div id="member-join-form-modal" class="uk-modal-container uk-flex-top" uk-modal>
-	<div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
-		<a href="#join-modal" class="uk-position-top-left" style="margin-top:10px;margin-left:5px;" uk-icon="icon: arrow-left; ratio: 1.5" uk-toggle></a>
-		<button class="uk-modal-close-default" type="button" uk-close></button>
-		<h3 class="uk-h3 uk-margin-small-top">Member Join Form</h3>
-		<div class="uk-child-width-1-2@m uk-margin-small" uk-grid>
-			<div>
-				<p>
-					Members graduating from high school will have access to free career guidance, counseling and coaching from members who are already in their different professional career paths as they seek options that are particular to their interests.
-					<br>
-					Members are viable to volunteering opportunities where they will also be awarded with a certificate of merit by the end of their service. Besides certification, volunteers will have developed a wide range of knowledge, skills and experience for the service they provided during their volunteering period.
-					<br>
-					Members have access to referees and recommendation letters for all legal scholarships and jobs application.
-					<br>
-					Members will be able to develop a wide range of leadership skills; at the heart of the organization is the vision to produce leaders with high values of integrity from amongst all members through various activities, fellowships and trainings that they are engaged in within the organization.
-				</p>
-			</div>
-			<div>
-				<p>Fill in the form below to join as a member.</p>
-				<form class="uk-form-horizontal">
-					<div class="uk-margin">
-						<label class="uk-form-label">Name</label>
-						<div class="uk-form-controls">
-							<div class="uk-width-1-1 uk-inline">
-								<span class="uk-form-icon" uk-icon="icon: user"></span>
-								<input class="uk-input" type="text" placeholder="Name">
-							</div>
-						</div>
-					</div>
-					<div class="uk-margin">
-						<label class="uk-form-label">Phone</label>
-						<div class="uk-form-controls">
-							<div class="uk-width-1-1 uk-inline">
-								<span class="uk-form-icon" uk-icon="icon: phone"></span>
-								<input class="uk-input" type="tel" placeholder="Phone">
-							</div>
-						</div>
-					</div>
-					<div class="uk-margin">
-						<label class="uk-form-label">Email</label>
-						<div class="uk-form-controls">
-							<div class="uk-width-1-1 uk-inline">
-								<span class="uk-form-icon" uk-icon="icon: mail"></span>
-								<input class="uk-input" type="text" placeholder="Email">
-							</div>
-						</div>
-					</div>
-					<div class="uk-margin">
-						<label class="uk-form-label">Why join us?</label>
-						<div class="uk-form-controls">
-							<textarea class="uk-textarea" rows="5" style="resize:none;" placeholder="Why join us?"></textarea>
-						</div>
-					</div>
-					<div class="uk-text-right">
-						<button type="submit" class="uk-button uk-button-primary">Submit</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+    <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
+        <a href="#join-modal" class="uk-position-top-left" style="margin-top:10px;margin-left:5px;"
+           uk-icon="icon: arrow-left; ratio: 1.5" uk-toggle></a>
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h3 class="uk-h3 uk-margin-small-top">Member Join Form</h3>
+        <div class="uk-child-width-1-2@m uk-margin-small" uk-grid>
+            <div>
+                <p>
+                    Members graduating from high school will have access to free career guidance, counseling and
+                    coaching from members who are already in their different professional career paths as they seek
+                    options that are particular to their interests.
+                    <br>
+                    Members are viable to volunteering opportunities where they will also be awarded with a certificate
+                    of merit by the end of their service. Besides certification, volunteers will have developed a wide
+                    range of knowledge, skills and experience for the service they provided during their volunteering
+                    period.
+                    <br>
+                    Members have access to referees and recommendation letters for all legal scholarships and jobs
+                    application.
+                    <br>
+                    Members will be able to develop a wide range of leadership skills; at the heart of the organization
+                    is the vision to produce leaders with high values of integrity from amongst all members through
+                    various activities, fellowships and trainings that they are engaged in within the organization.
+                </p>
+            </div>
+            <div>
+                <p>Fill in the form below to join as a member.</p>
+                <form class="uk-form-horizontal" id="member_form">
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Name</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-width-1-1 uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input class="uk-input" name="member_name" type="text" placeholder="Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Phone</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-width-1-1 uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: phone"></span>
+                                <input class="uk-input" name="member_phone" type="tel" placeholder="Phone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Email</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-width-1-1 uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                                <input class="uk-input" name="member_email" type="text" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Why join us?</label>
+                        <div class="uk-form-controls">
+                            <textarea class="uk-textarea" name="member_reason" rows="5" style="resize:none;"
+                                      placeholder="Why join us?"></textarea>
+                        </div>
+                    </div>
+
+					<input type="hidden" name="add_member">
+
+                    <div class="uk-text-right">
+                        <button type="submit" class="uk-button uk-button-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="partner-join-form-modal" class="uk-modal-container uk-flex-top" uk-modal>
-	<div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
-		<a href="#join-modal" class="uk-position-top-left" style="margin-top:10px;margin-left:5px;" uk-icon="icon: arrow-left; ratio: 1.5" uk-toggle></a>
-		<button class="uk-modal-close-default" type="button" uk-close></button>
-		<h3 class="uk-h3 uk-margin-small-top">Partner Join Form</h3>
-		<div class="uk-child-width-1-2@m uk-margin-small" uk-grid>
-			<div class="uk-position-relative">
-				<div class="uk-height-medium border-rounded uk-cover-container">
-					<img src="img/bfa17.jpg" class="" uk-cover>
-				</div>
-			</div>
-			<div class="">
-				<p>Fill in the form below to join as a partner.</p>
-				<form class="uk-form-horizontal">
-					<div class="uk-margin">
-						<label class="uk-form-label">Organization</label>
-						<div class="uk-form-controls">
-							<div class="uk-width-1-1 uk-inline">
-								<span class="uk-form-icon" uk-icon="icon: users"></span>
-								<input class="uk-input" type="text" placeholder="Organization">
-							</div>
-						</div>
-					</div>
-					<div class="uk-margin">
-						<label class="uk-form-label">Phone</label>
-						<div class="uk-form-controls">
-							<div class="uk-width-1-1 uk-inline">
-								<span class="uk-form-icon" uk-icon="icon: phone"></span>
-								<input class="uk-input" type="tel" placeholder="Phone">
-							</div>
-						</div>
-					</div>
-					<div class="uk-margin">
-						<label class="uk-form-label">Email</label>
-						<div class="uk-form-controls">
-							<div class="uk-width-1-1 uk-inline">
-								<span class="uk-form-icon" uk-icon="icon: mail"></span>
-								<input class="uk-input" type="text" placeholder="Email">
-							</div>
-						</div>
-					</div>
-					<div class="uk-margin">
-						<label class="uk-form-label">Location</label>
-						<div class="uk-form-controls">
-							<div class="uk-width-1-1 uk-inline">
-								<span class="uk-form-icon" uk-icon="icon: map"></span>
-								<input class="uk-input" type="text" placeholder="Location">
-							</div>
-						</div>
-					</div>
-					<div class="uk-margin">
-						<label class="uk-form-label">Programme</label>
-						<div class="uk-form-controls">
-							<select class="uk-select">
-								<option>Health</option>
-								<option>Education</option>
-								<option>Girl Chapter</option>
-							</select>
-						</div>
-					</div>
-					<div class="uk-text-right">
-						<button type="submit" class="uk-button uk-button-primary">Submit</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+    <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
+        <a href="#join-modal" class="uk-position-top-left" style="margin-top:10px;margin-left:5px;"
+           uk-icon="icon: arrow-left; ratio: 1.5" uk-toggle></a>
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h3 class="uk-h3 uk-margin-small-top">Partner Join Form</h3>
+        <div class="uk-child-width-1-2@m uk-margin-small" uk-grid>
+            <div class="uk-position-relative">
+                <div class="uk-height-medium border-rounded uk-cover-container">
+                    <img src="img/bfa17.jpg" class="" uk-cover>
+                </div>
+            </div>
+            <div class="">
+                <p>Fill in the form below to join as a partner.</p>
+                <form class="uk-form-horizontal">
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Organization</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-width-1-1 uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: users"></span>
+                                <input class="uk-input" type="text" placeholder="Organization">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Phone</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-width-1-1 uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: phone"></span>
+                                <input class="uk-input" type="tel" placeholder="Phone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Email</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-width-1-1 uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                                <input class="uk-input" type="text" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Location</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-width-1-1 uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: map"></span>
+                                <input class="uk-input" type="text" placeholder="Location">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Programme</label>
+                        <div class="uk-form-controls">
+                            <select class="uk-select">
+                                <option>Health</option>
+                                <option>Education</option>
+                                <option>Girl Chapter</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="uk-text-right">
+                        <button type="submit" class="uk-button uk-button-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="sponsor-join-form-modal" class="uk-modal-container uk-flex-top" uk-modal>
-	<div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
-		<a href="#join-modal" class="uk-position-top-left" style="margin-top:10px;margin-left:5px;" uk-icon="icon: arrow-left; ratio: 1.5" uk-toggle></a>
-		<button class="uk-modal-close-default" type="button" uk-close></button>
-		<h3 class="uk-h3 uk-margin-small-top">Sponsor Join Form</h3>
-		<div class="uk-child-width-1-2@m uk-margin-small" uk-grid>
-			<div class="uk-position-relative">
-				<div class="uk-height-medium border-rounded uk-cover-container">
-					<img src="img/bfa18.jpg" class="" uk-cover>
-				</div>
-			</div>
-			<div class="">
-				<p>Fill in the form below to join as a sponsor.</p>
-				<form class="uk-form-horizontal">
-					<div class="uk-margin">
-						<label class="uk-form-label">Organization</label>
-						<div class="uk-form-controls">
-							<div class="uk-width-1-1 uk-inline">
-								<span class="uk-form-icon" uk-icon="icon: users"></span>
-								<input class="uk-input" type="text" placeholder="Organization">
-							</div>
-						</div>
-					</div>
-					<div class="uk-margin">
-						<label class="uk-form-label">Phone</label>
-						<div class="uk-form-controls">
-							<div class="uk-width-1-1 uk-inline">
-								<span class="uk-form-icon" uk-icon="icon: phone"></span>
-								<input class="uk-input" type="tel" placeholder="Phone">
-							</div>
-						</div>
-					</div>
-					<div class="uk-margin">
-						<label class="uk-form-label">Email</label>
-						<div class="uk-form-controls">
-							<div class="uk-width-1-1 uk-inline">
-								<span class="uk-form-icon" uk-icon="icon: mail"></span>
-								<input class="uk-input" type="text" placeholder="Email">
-							</div>
-						</div>
-					</div>
-					<div class="uk-margin">
-						<label class="uk-form-label">Location</label>
-						<div class="uk-form-controls">
-							<div class="uk-width-1-1 uk-inline">
-								<span class="uk-form-icon" uk-icon="icon: map"></span>
-								<input class="uk-input" type="text" placeholder="Location">
-							</div>
-						</div>
-					</div>
-					<div class="uk-margin">
-						<label class="uk-form-label">Programme</label>
-						<div class="uk-form-controls">
-							<select class="uk-select">
-								<option>Health</option>
-								<option>Education</option>
-								<option>Girl Chapter</option>
-							</select>
-						</div>
-					</div>
-					<div class="uk-text-right">
-						<button type="submit" class="uk-button uk-button-primary">Submit</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+    <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
+        <a href="#join-modal" class="uk-position-top-left" style="margin-top:10px;margin-left:5px;"
+           uk-icon="icon: arrow-left; ratio: 1.5" uk-toggle></a>
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h3 class="uk-h3 uk-margin-small-top">Sponsor Join Form</h3>
+        <div class="uk-child-width-1-2@m uk-margin-small" uk-grid>
+            <div class="uk-position-relative">
+                <div class="uk-height-medium border-rounded uk-cover-container">
+                    <img src="img/bfa18.jpg" class="" uk-cover>
+                </div>
+            </div>
+            <div class="">
+                <p>Fill in the form below to join as a sponsor.</p>
+                <form class="uk-form-horizontal">
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Organization</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-width-1-1 uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: users"></span>
+                                <input class="uk-input" type="text" placeholder="Organization">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Phone</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-width-1-1 uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: phone"></span>
+                                <input class="uk-input" type="tel" placeholder="Phone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Email</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-width-1-1 uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                                <input class="uk-input" type="text" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Location</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-width-1-1 uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: map"></span>
+                                <input class="uk-input" type="text" placeholder="Location">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Programme</label>
+                        <div class="uk-form-controls">
+                            <select class="uk-select">
+                                <option>Health</option>
+                                <option>Education</option>
+                                <option>Girl Chapter</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="uk-text-right">
+                        <button type="submit" class="uk-button uk-button-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="js/jquery.menu-aim.js"></script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
 <!-- <script src="js/page.min.js"></script> -->
 <script>
-	$(document).ready(function() {
-		$("*").click(function( event ) {
-			var target = $(event.target);
-			if(!target.closest("a")) {
-				// !target.is("a")
-				// alert( event.isDefaultPrevented() );
-				event.preventDefault();
-			}
-		});
-	});
+    $(document).ready(function () {
+        $("*").click(function (event) {
+            var target = $(event.target);
+            if (!target.closest("a")) {
+                // !target.is("a")
+                // alert( event.isDefaultPrevented() );
+                event.preventDefault();
+            }
+        });
+    });
 </script>
 <script>
-	function get_content(tpl, div) {
-		$.get(tpl, function(result){
-			$result = $(result);
+    function get_content(tpl, div) {
+        $.get(tpl, function (result) {
+            $result = $(result);
 
-			$( div ).html( result );
-			$result.find('script').appendTo(div);
-		}, 'html');
-	}
-	crossroads.addRoute('/{section}/{subsection}', function(section, subsection){
-		get_content('templates/'+section+'.html', '#content');
-		window.target = subsection;
-		// removeHash();
-	});
-	crossroads.addRoute('/{section}', function(section,){
-		window.target = null;
-		get_content('templates/'+section+'.html', '#content');
-		// removeHash();
-	});
-	crossroads.addRoute('/', function(id){
-		window.target = null;
-		get_content('templates/home.html', '#content');
-		// removeHash();
-	});
+            $(div).html(result);
+            $result.find('script').appendTo(div);
+        }, 'html');
+    }
 
-	//setup hasher
-	function parseHash(newHash, oldHash){
-		crossroads.parse(newHash);
-	}
-	hasher.initialized.add(parseHash); //parse initial hash
-	hasher.changed.add(parseHash); //parse hash changes
-	hasher.init(); //start listening for history change
+    crossroads.addRoute('/{section}/{subsection}', function (section, subsection) {
+        get_content('templates/' + section + '.html', '#content');
+        window.target = subsection;
+        // removeHash();
+    });
+    crossroads.addRoute('/{section}', function (section,) {
+        window.target = null;
+        get_content('templates/' + section + '.html', '#content');
+        // removeHash();
+    });
+    crossroads.addRoute('/', function (id) {
+        window.target = null;
+        get_content('templates/home.html', '#content');
+        // removeHash();
+    });
 
-	function removeHash () {
-		var scrollV, scrollH, loc = window.location;
-		if ("pushState" in history) {
-			history.pushState("", document.title, loc.pathname + loc.search);
-		} else {
-			// Prevent scrolling by storing the page's current scroll offset
-			scrollV = document.body.scrollTop;
-			scrollH = document.body.scrollLeft;
+    //setup hasher
+    function parseHash(newHash, oldHash) {
+        crossroads.parse(newHash);
+    }
 
-			loc.hash = "";
+    hasher.initialized.add(parseHash); //parse initial hash
+    hasher.changed.add(parseHash); //parse hash changes
+    hasher.init(); //start listening for history change
 
-			// Restore the scroll offset, should be flicker free
-			document.body.scrollTop = scrollV;
-			document.body.scrollLeft = scrollH;
-		}
-	}
+    function removeHash() {
+        var scrollV, scrollH, loc = window.location;
+        if ("pushState" in history) {
+            history.pushState("", document.title, loc.pathname + loc.search);
+        } else {
+            // Prevent scrolling by storing the page's current scroll offset
+            scrollV = document.body.scrollTop;
+            scrollH = document.body.scrollLeft;
 
-	function toSubsection(subsection) {
-		UIkit.scroll('#content', {offset: 50}).scrollTo('#' + subsection);
-	}
-	const kebabCase = str => str.match(/[A-Z]{2,}(?=[A-Z][a-z0-9]*|\b)|[A-Z]?[a-z0-9]*|[A-Z]|[0-9]+/g)
-			.filter(Boolean)
-			.map(x => x.toLowerCase())
-			.join('-');
+            loc.hash = "";
+
+            // Restore the scroll offset, should be flicker free
+            document.body.scrollTop = scrollV;
+            document.body.scrollLeft = scrollH;
+        }
+    }
+
+    function toSubsection(subsection) {
+        UIkit.scroll('#content', {offset: 50}).scrollTo('#' + subsection);
+    }
+
+    const kebabCase = str => str.match(/[A-Z]{2,}(?=[A-Z][a-z0-9]*|\b)|[A-Z]?[a-z0-9]*|[A-Z]|[0-9]+/g)
+        .filter(Boolean)
+        .map(x => x.toLowerCase())
+        .join('-');
+
+    var site_url = 'php_scripts/requestHandler.php';
+</script>
+
+<script src="js/member.js"></script>
+
+<script>
+    $('#member_form').on('submit', function (e) {
+        e.preventDefault();
+
+        addMember(this);
+
+    });
 </script>
 
 </body>
+
 </html>

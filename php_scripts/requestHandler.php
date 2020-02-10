@@ -1,12 +1,15 @@
 <?php
 include 'Executive.php';
+include 'Member.php';
 include 'CommonFunction.php';
 include 'Connection.php';
 
 $executive = new Executive();
+$member = new Member();
+
 
 if ($_POST) {
-
+//            print("<pre>" . print_r($_POST, true) . "</pre>");
     switch ($_POST) {
         /*add executive*/
         case isset($_POST['add_executive']):
@@ -190,13 +193,21 @@ if ($_POST) {
             $sender_email = $_POST['sender_email'];
             $sender_text = $_POST['sender_text'];
             $email_president = $_POST['email_president'];
-//            print("<pre>" . print_r($_POST, true) . "</pre>");
 
             $executive->sendExecutiveEmail($sender_name, $sender_email, $sender_text, $email_president);
             break;
         /*delete executive*/
         case isset($_POST['delete_course']):
             $executive->deleteExecutive($_POST['course_id']);
+            break;
+        /*add member*/
+        case isset($_POST['add_member']):
+            $name = $_POST['member_name'];
+            $phone = $_POST['member_phone'];
+            $email = $_POST['member_email'];
+            $why = $_POST['member_reason'];
+
+            $member->addMember($name, $phone, $email, $why);
             break;
         default:
             break;
@@ -212,6 +223,9 @@ if ($_GET) {
             break;
         case isset($_GET['retrieve_team']):
             $executive->retrieveExecutiveTeam();
+            break;
+        case isset($_GET['retrieve_member']):
+            $member->retrieveMember();
             break;
         default:
             break;
