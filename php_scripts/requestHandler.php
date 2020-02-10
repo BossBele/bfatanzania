@@ -2,12 +2,14 @@
 include 'Executive.php';
 include 'Member.php';
 include 'Partner.php';
+include 'Sponsor.php';
 include 'CommonFunction.php';
 include 'Connection.php';
 
 $executive = new Executive();
 $member = new Member();
 $partner = new Partner();
+$sponsor = new Sponsor();
 
 
 if ($_POST) {
@@ -221,6 +223,16 @@ if ($_POST) {
 
             $partner->addPartner($organisation, $phone, $email, $location, $programme);
             break;
+        /*add sponsor*/
+        case isset($_POST['add_sponsor']):
+            $organisation = $_POST['organisation'];
+            $phone = $_POST['phone'];
+            $email = $_POST['email'];
+            $location = $_POST['location'];
+            $programme = $_POST['programme'];
+
+            $sponsor->addSponsor($organisation, $phone, $email, $location, $programme);
+            break;
         default:
             break;
     }
@@ -241,6 +253,9 @@ if ($_GET) {
             break;
         case isset($_GET['retrieve_partner']):
             $partner->retrievePartner();
+            break;
+        case isset($_GET['retrieve_sponsor']):
+            $sponsor->retrieveSponsor();
             break;
         default:
             break;
