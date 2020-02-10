@@ -283,13 +283,13 @@
             </div>
             <div class="">
                 <p>Fill in the form below to join as a partner.</p>
-                <form class="uk-form-horizontal">
+                <form class="uk-form-horizontal" id="partner_form">
                     <div class="uk-margin">
                         <label class="uk-form-label">Organization</label>
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: users"></span>
-                                <input class="uk-input" type="text" placeholder="Organization">
+                                <input class="uk-input" name="organisation" type="text" placeholder="Organization">
                             </div>
                         </div>
                     </div>
@@ -298,7 +298,7 @@
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: phone"></span>
-                                <input class="uk-input" type="tel" placeholder="Phone">
+                                <input class="uk-input" name="phone" type="tel" placeholder="Phone">
                             </div>
                         </div>
                     </div>
@@ -307,7 +307,7 @@
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: mail"></span>
-                                <input class="uk-input" type="text" placeholder="Email">
+                                <input class="uk-input" name="email" type="text" placeholder="Email">
                             </div>
                         </div>
                     </div>
@@ -316,20 +316,23 @@
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: map"></span>
-                                <input class="uk-input" type="text" placeholder="Location">
+                                <input class="uk-input" name="location" type="text" placeholder="Location">
                             </div>
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label class="uk-form-label">Programme</label>
                         <div class="uk-form-controls">
-                            <select class="uk-select">
+                            <select class="uk-select" name="programme">
                                 <option>Health</option>
                                 <option>Education</option>
                                 <option>Girl Chapter</option>
                             </select>
                         </div>
                     </div>
+
+					<input type="hidden" name="add_partner">
+
                     <div class="uk-text-right">
                         <button type="submit" class="uk-button uk-button-primary">Submit</button>
                     </div>
@@ -487,6 +490,8 @@
 </script>
 
 <script src="js/member.js"></script>
+<script src="js/partner.js"></script>
+
 
 <script>
     $('#member_form').on('submit', function (e) {
@@ -495,6 +500,13 @@
         addMember(this);
 
     });
+
+	$('#partner_form').on('submit', function (e) {
+		e.preventDefault();
+
+		addPartner(this);
+
+	});
 </script>
 
 </body>

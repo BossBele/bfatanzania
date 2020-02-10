@@ -1,11 +1,13 @@
 <?php
 include 'Executive.php';
 include 'Member.php';
+include 'Partner.php';
 include 'CommonFunction.php';
 include 'Connection.php';
 
 $executive = new Executive();
 $member = new Member();
+$partner = new Partner();
 
 
 if ($_POST) {
@@ -209,6 +211,16 @@ if ($_POST) {
 
             $member->addMember($name, $phone, $email, $why);
             break;
+        /*add partner*/
+        case isset($_POST['add_partner']):
+            $organisation = $_POST['organisation'];
+            $phone = $_POST['phone'];
+            $email = $_POST['email'];
+            $location = $_POST['location'];
+            $programme = $_POST['programme'];
+
+            $partner->addPartner($organisation, $phone, $email, $location, $programme);
+            break;
         default:
             break;
     }
@@ -226,6 +238,9 @@ if ($_GET) {
             break;
         case isset($_GET['retrieve_member']):
             $member->retrieveMember();
+            break;
+        case isset($_GET['retrieve_partner']):
+            $partner->retrievePartner();
             break;
         default:
             break;
