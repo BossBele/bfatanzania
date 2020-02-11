@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 class Member
 {
@@ -30,22 +31,32 @@ class Member
 
     public function retrieveMember()
     {
-        $connection = new Connection();
-        $sql = "select * from member";
-        $result = mysqli_query($connection->connect(), $sql);
+        if (!isset($_SESSION['userId'])) {
+            // not logged in
+            $login = array();
 
-        $data = array();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                array_push($data, array(
-                    'name' => $row['name'],
-                    'phone' => $row['phone'],
-                    'email' => $row['email'],
-                    'why' => $row['why']
-                ));
+            array_push($login, array(
+                'AUTH' => "failed"
+            ));
+            echo json_encode($login);
+        } else {
+            $connection = new Connection();
+            $sql = "select * from member";
+            $result = mysqli_query($connection->connect(), $sql);
+
+            $data = array();
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    array_push($data, array(
+                        'name' => $row['name'],
+                        'phone' => $row['phone'],
+                        'email' => $row['email'],
+                        'why' => $row['why']
+                    ));
+                }
             }
-        }
 
-        echo json_encode($data);
+            echo json_encode($data);
+        }
     }
 }

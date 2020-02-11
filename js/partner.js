@@ -30,17 +30,20 @@ function retrievePartner() {
         dataType: "json",
         data: data,
         success: function (result) {
-
-            $('#partner_table tbody').empty();
-            $.each(result, function (index, obj) {
-                var row = $('<tr>');
-                row.append('<td>' + obj.organisation + '</td>');
-                row.append('<td>' + obj.phone + '</td>');
-                row.append('<td>' + obj.email + '</td>');
-                row.append('<td>' + obj.location + '</td>');
-                row.append('<td>' + obj.programme + '</td>');
-                $('#partner_table').append(row);
-            });
+            if (result[0].AUTH === "failed") {
+                location.href = "../";
+            } else {
+                $('#partner_table tbody').empty();
+                $.each(result, function (index, obj) {
+                    var row = $('<tr>');
+                    row.append('<td>' + obj.organisation + '</td>');
+                    row.append('<td>' + obj.phone + '</td>');
+                    row.append('<td>' + obj.email + '</td>');
+                    row.append('<td>' + obj.location + '</td>');
+                    row.append('<td>' + obj.programme + '</td>');
+                    $('#partner_table').append(row);
+                });
+            }
 
         }
     });

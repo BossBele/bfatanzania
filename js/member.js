@@ -30,16 +30,19 @@ function retrieveMember() {
         dataType: "json",
         data: data,
         success: function (result) {
-
-            $('#member_table tbody').empty();
-            $.each(result, function (index, obj) {
-                var row = $('<tr>');
-                row.append('<td>' + obj.name + '</td>');
-                row.append('<td>' + obj.phone + '</td>');
-                row.append('<td>' + obj.email + '</td>');
-                row.append('<td>' + obj.why + '</td>');
-                $('#member_table').append(row);
-            });
+            if (result[0].AUTH === "failed") {
+                location.href = "../";
+            } else {
+                $('#member_table tbody').empty();
+                $.each(result, function (index, obj) {
+                    var row = $('<tr>');
+                    row.append('<td>' + obj.name + '</td>');
+                    row.append('<td>' + obj.phone + '</td>');
+                    row.append('<td>' + obj.email + '</td>');
+                    row.append('<td>' + obj.why + '</td>');
+                    $('#member_table').append(row);
+                });
+            }
 
         }
     });

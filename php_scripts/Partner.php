@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 class Partner
 {
@@ -28,23 +29,34 @@ class Partner
 
     public function retrievePartner()
     {
-        $connection = new Connection();
-        $sql = "select * from partner";
-        $result = mysqli_query($connection->connect(), $sql);
+        if (!isset($_SESSION['userId'])) {
+            // not logged in
+            $login = array();
 
-        $data = array();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                array_push($data, array(
-                    'organisation' => $row['organisation'],
-                    'phone' => $row['phone'],
-                    'email' => $row['email'],
-                    'location' => $row['location'],
-                    'programme' => $row['programme']
-                ));
+            array_push($login, array(
+                'AUTH' => "failed"
+            ));
+            echo json_encode($login);
+        } else {
+            $connection = new Connection();
+            $sql = "select * from partner";
+            $result = mysqli_query($connection->connect(), $sql);
+
+            $data = array();
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    array_push($data, array(
+                        'organisation' => $row['organisation'],
+                        'phone' => $row['phone'],
+                        'email' => $row['email'],
+                        'location' => $row['location'],
+                        'programme' => $row['programme']
+                    ));
+                }
             }
+
+            echo json_encode($data);
         }
 
-        echo json_encode($data);
     }
 }
