@@ -12,12 +12,16 @@ function addExecutive(data) {
         processData: false,
         data: new FormData(data),
         success: function (result) {
-            if (result[0].message === "success") {
-                alert('Executive added');
-                $('#executive_form').trigger("reset");
+            if (result[0].AUTH === "failed") {
+                location.href = "../";
             } else {
-                alert('Executive exists');
-                $('#executive_form').trigger("reset");
+                if (result[0].message === "success") {
+                    alert('Executive added');
+                    $('#executive_form').trigger("reset");
+                } else {
+                    alert('Executive exists');
+                    $('#executive_form').trigger("reset");
+                }
             }
 
         }
@@ -36,12 +40,16 @@ function editExecutive(data) {
         processData: false,
         data: new FormData(data),
         success: function (result) {
-            if (result[0].message === "success") {
-                alert('Executive updates');
-                $('#executive_form_edit').trigger("reset");
+            if (result[0].AUTH === "failed") {
+                location.href = "../";
             } else {
-                alert('Executive exists');
-                $('#executive_form_edit').trigger("reset");
+                if (result[0].message === "success") {
+                    alert('Executive updates');
+                    $('#executive_form_edit').trigger("reset");
+                } else {
+                    alert('Executive exists');
+                    $('#executive_form_edit').trigger("reset");
+                }
             }
 
         }
@@ -57,23 +65,28 @@ function retrieveExecutive() {
         dataType: "json",
         data: data,
         success: function (result) {
-            try {
-                document.getElementById('edit_form').style.display = 'block';
-                document.getElementById('update_form').style.display = 'none';
-            } catch (e) {
-                console.log(e);
+            if (result[0].AUTH === "failed") {
+                location.href = "../";
+            } else {
+                try {
+                    document.getElementById('edit_form').style.display = 'block';
+                    document.getElementById('update_form').style.display = 'none';
+                } catch (e) {
+                    console.log(e);
+                }
+                $('#all_executive tbody').empty();
+                all_executives = result;
+                $.each(result, function (index, obj) {
+                    var row = $('<tr>');
+                    row.append('<td>' + obj.name + '</td>');
+                    row.append('<td>' + obj.title + '</td>');
+                    row.append('<td>' + obj.phone + '</td>');
+                    row.append('<td>' + obj.email + '</td>');
+                    row.append('<td><button class="uk-button uk-button-default uk-button-small" onclick="updateExecutive(' + index + ')" type="button">Edit <span uk-icon="icon: file-edit; ratio: 0.8"></span></button></td>')
+                    $('#all_executive').append(row);
+                });
             }
-            $('#all_executive tbody').empty();
-            all_executives = result;
-            $.each(result, function (index, obj) {
-                var row = $('<tr>');
-                row.append('<td>' + obj.name + '</td>');
-                row.append('<td>' + obj.title + '</td>');
-                row.append('<td>' + obj.phone + '</td>');
-                row.append('<td>' + obj.email + '</td>');
-                row.append('<td><button class="uk-button uk-button-default uk-button-small" onclick="updateExecutive(' + index + ')" type="button">Edit <span uk-icon="icon: file-edit; ratio: 0.8"></span></button></td>')
-                $('#all_executive').append(row);
-            });
+
         }
     });
 }
@@ -278,3 +291,17 @@ function sendEmail(data) {
         }
     });
 }
+
+$('#logout').on('click', function () {
+    var data = {logout: "yes"};
+    $.ajax({
+        url: site_url,
+        type: "get",
+        dataType: "json",
+        data: data,
+        success: function (result) {
+            location.href = "../";
+
+        }
+    });
+});

@@ -1,10 +1,11 @@
 <?php
+include 'Connection.php';
+//include 'login.php';
 include 'Executive.php';
 include 'Member.php';
 include 'Partner.php';
 include 'Sponsor.php';
 include 'CommonFunction.php';
-include 'Connection.php';
 
 $executive = new Executive();
 $member = new Member();
@@ -256,6 +257,9 @@ if ($_GET) {
             break;
         case isset($_GET['retrieve_sponsor']):
             $sponsor->retrieveSponsor();
+            break;
+        case isset($_GET['logout']):
+            $executive->logout();
             break;
         default:
             break;
