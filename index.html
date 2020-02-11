@@ -66,14 +66,14 @@
 			                </div>
 		        		</li>
 		        		<li class="uk-active">
-		        			<a href="#">Career</a>
+		        			<a href="#careers">Careers</a>
 		        			<div class="uk-navbar-dropdown">
 			                    <ul class="uk-nav uk-navbar-dropdown-nav">
 			                        <li class="uk-active">
-			                        	<a href="#">Jobs</a>
+			                        	<a href="#careers/jobs">Jobs</a>
 			                        </li>
-			                        <li><a href="#">Internship</a></li>
-			                        <li><a href="#">Volunteering</a></li>
+			                        <li><a href="#careers/internship">Internship</a></li>
+			                        <li><a href="#careers/volunteering">Volunteering</a></li>
 			                    </ul>
 			                </div>
 		        		</li>
@@ -389,6 +389,10 @@
 				// alert( event.isDefaultPrevented() );
 				event.preventDefault();
 			}
+		});
+		$("ul.uk-nav li").click(function() {
+			$(this).addClass("uk-active");
+			$(this).siblings().removeClass("uk-active");
 		});
 	});
 </script>

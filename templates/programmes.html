@@ -132,5 +132,12 @@
 		if (target) {
 			UIkit.scroll('#content', {offset: 100}).scrollTo('#' + target);
 		}
+		$("*").click(function (event) {
+            var target = $(event.target);
+            if (!target.is("a")) {
+                // alert( event.isDefaultPrevented() );
+                event.preventDefault();
+            }
+        });
 	});
 </script>
